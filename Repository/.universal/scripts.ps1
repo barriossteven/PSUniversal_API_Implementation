@@ -1,0 +1,1 @@
+﻿New-PSUScript -Name "test.ps1" -ManualTime "2" -Path "test.ps1"

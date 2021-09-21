@@ -1,0 +1,2 @@
+﻿New-PSUDashboard -Name "Dash01" -FilePath "Dash01.ps1" -BaseUrl "/Dash01" -Framework "UniversalDashboard:Latest" -SessionTimeout 0 -Description "test" -Credential "Default" 
+New-PSUDashboard -Name "Citrix Lab Environment" -FilePath "Citrix Lab Environment.ps1" -BaseUrl "/CitrixLAB" -Framework "UniversalDashboard:Latest" -Component @("UniversalDashboard.CodeEditor:1.1.1") -SessionTimeout 0 -Credential "Default"

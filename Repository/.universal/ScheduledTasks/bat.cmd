@@ -1,0 +1,1 @@
+wscript "C:\ProgramData\UniversalAutomation\Repository\.universal\ScheduledTasks\ps-run_hidden.vbs"

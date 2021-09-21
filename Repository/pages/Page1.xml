@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Page1" Authenticated="false" ShowInNavigation="true" ShowNavigation="true">
+  <Components>
+    <BarChart Id="c4728ab9-3020-4d70-8361-31754ca71cd1" />
+    <Title Id="deb23de6-156b-4431-a799-467360820304" Value="Title" Code="false" Copyable="false" Ellipsis="false" Keyboard="false" Marked="false" Bold="false" Italic="false" Underline="false" Level="1" />
+  </Components>
+  <Layout>
+    <Lg>
+      <LayoutItem Id="c4728ab9-3020-4d70-8361-31754ca71cd1" X="2" Y="0" W="10" H="10" />
+      <LayoutItem Id="deb23de6-156b-4431-a799-467360820304" X="11" Y="10" W="10" H="10" />
+    </Lg>
+  </Layout>
+  <AccessControls>All</AccessControls>
+</Page>

@@ -1,0 +1,66 @@
+{
+    "SITE_A": {
+    "Controllers": [
+        "SITE_A_DLC01",
+        "SITE_A_DLC02",
+        "SITE_A_DLC03",
+        "SITE_A_DLC04"
+      ],
+      "Provisioning": [
+        "SITE_A_PVS01",
+        "SITE_A_PVS02",
+        "SITE_A_PVS03",
+        "SITE_A_PVS04"
+      ],
+      
+      "vCenter": "SITE_A_VC02",
+      "VM_Prefix": "SITE_A*"
+  },
+  "SITE_B": {
+    "Controllers": [
+        "SITE_B_DLC01",
+        "SITE_B_DLC02",
+        "SITE_B_DLC03",
+        "SITE_B_DLC04"
+      ],
+      "Provisioning": [
+        "SITE_B_PVS01",
+        "SITE_B_PVS02",
+        "SITE_B_PVS03",
+        "SITE_B_PVS04"
+      ],
+      
+      "vCenter": "SITE_B_VC01",
+      "VM_Prefix": "SITE_B*"
+  },
+    "SITE_C": {
+    "Controllers": [
+        "SITE_C_DLC01",
+        "SITE_C_DLC02",
+        "SITE_C_DLC03",
+        "SITE_C_DLC04"
+      ],
+      "Provisioning": [
+        "SITE_C_PVS01",
+        "SITE_C_PVS02",
+        "SITE_C_PVS03",
+        "SITE_C_PVS04"
+      ],
+      
+      "vCenter": "SITE_C_VC02",
+      "VM_Prefix": "SITE_C*"
+  },
+    "LAB": {
+    "Controllers": [
+        "LAB_DLC01",
+        "LAB_DLC02"
+      ],
+      "Provisioning": [
+        "LAB_PVS01",
+        "LAB_PVS02"
+      ],
+      
+      "vCenter": "_LAB_VC01",
+      "VM_Prefix": "LAB*"
+  }
+}

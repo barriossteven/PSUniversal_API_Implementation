@@ -1,0 +1,1 @@
+﻿Set-PSUSetting -LoggingFilePath "C:\ProgramData\UniversalAutomation\logs\log.txt" -LogLevel "Information" -DefaultEnvironment "5.1.19041.1023" -Telemetry -SecurityEnvironment "5.1.19041.1023" -ApiEnvironment "powershell.exe"
