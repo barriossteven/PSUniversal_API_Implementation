@@ -28,6 +28,10 @@ Powershell Universal is a gargantuan platform that can be finely tailored to you
 The user interface is practical but lacks in aesthetic. Additionally, expanding on the dashboard features would be an area of interest.
 
 ## .NOTES
+
+Dashboard source code is located in /Repository/Citrix Lab Environment.ps1.
+API source code is located in /Repository/.universal/endpoints.ps1.
+
 Script was created using Powershell 5.1 but is compatible with Powershell Core. Powershell Universal 2.2.0 was used for framework.
 Requirements:
   1. ActiveDirectory
