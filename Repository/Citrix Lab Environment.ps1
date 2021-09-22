@@ -6,7 +6,8 @@ $Pages += New-UDPage -Name "AllSites" -Content {
 
     $Session:Site = "LAB" #Default site to show when page is loaded
     $Session:ServerJson = Get-Content -Raw -Path "C:\ProgramData\UniversalAutomation\Repository\.universal\Servers.json"| ConvertFrom-Json
-
+    $session:tableexecutiontime  = ""
+    
     New-UDGrid -Container -Content {
         New-UDGrid -Item -SmallSize 3 -Content {
             New-UDCard -Title "Site Selection" -Content {
@@ -19,6 +20,8 @@ $Pages += New-UDPage -Name "AllSites" -Content {
                     $Session:Site = $eventdata
                     Sync-UDElement -Id 'table'
               } -value LAB #default selection for radio
+              New-UDDynamic -Id "tableexecutiontime" -Content {New-UDTypography -Text "Table execution time: $($session:tableexecutiontime)"} 
+              
             }
         }  
         New-UDGrid -Item -SmallSize 3 -Content {
@@ -49,6 +52,9 @@ $Pages += New-UDPage -Name "AllSites" -Content {
     }
 
     New-UDDynamic -Id 'table' -Content {
+    
+        $session:tableexecutiontime = "Loading..."
+        Sync-UDElement -id "tableexecutiontime"
 
         $Controllers = $Session:ServerJson.$Session:Site.Controllers
         $PVSServers = $Session:ServerJson.$Session:Site.Provisioning
@@ -57,6 +63,8 @@ $Pages += New-UDPage -Name "AllSites" -Content {
 
         $Properties = @("Hostedmachinename","Catalogname","DesktopGroupName","ipaddress","sessionusername","sessionstate","sessionclientname","powerstate","InMaintenanceMode","registrationstate","pvs_disklocatorname","pvs_diskversion","PVS_Servername","vc_host","vc_disk")
 
+        $Elapsed = [System.Diagnostics.Stopwatch]::StartNew()
+        
         $inventory = Invoke-RestMethod http://localhost:5000/EP_Get-Inventory -Method get -Body @{ 
             Controller = $($Controllers | get-random)
             ProvisioningServer = $($PVSServers | get-random)
@@ -75,7 +83,11 @@ $Pages += New-UDPage -Name "AllSites" -Content {
         }
 
         New-UDTable -Id 'inventory' -Data  $inventory -ShowSearch -paging -PageSize 10 -showsort -columns $Columns -Dense -Export 
-
+        
+        $Elapsed.Stop()
+        $session:tableexecutiontime = $($Elapsed.Elapsed.ToString())
+        Sync-UDElement -id "tableexecutiontime"
+        
     } -LoadingComponent {
         #"Loading"
         New-UDProgress
